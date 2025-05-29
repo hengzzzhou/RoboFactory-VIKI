@@ -1,9 +1,9 @@
 <div align="center">
-<img src="./assets/logo.png" width="500"/>
+<img src="./assets/dataset_v5.pdf" width="500"/>
 </div>
 
 # RoboFactory-VIKI
-**RoboFactory-VIKI: Visual Intelligence and Knowledge Integration for Robotic Factory Automation**
+**VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning**
 
 <p align="center">
     ⭐️ <a href="#overview">Project</a>&nbsp&nbsp │ &nbsp&nbsp🤖 <a href="#model-zoo">Models</a>&nbsp&nbsp │ &nbsp&nbsp📊 <a href="#datasets">Datasets</a>&nbsp&nbsp │ &nbsp&nbsp🚀 <a href="#quick-start">Quick Start</a>&nbsp&nbsp │ &nbsp&nbsp📑 <a href="#citation">Citation</a>
@@ -25,7 +25,7 @@ Our framework leverages **Group Relative Policy Optimization (GRPO)** to train v
 - **Human-Robot Interaction**: Enable natural language communication with robotic systems
 
 <div align="center">
-<img src="./assets/overview.png" />
+<img src="./assets/viki-r_v7.pdf" />
 </div>
 
 ## 🎯 Key Features
@@ -99,13 +99,13 @@ pip install flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x
 
 ```bash
 # Train VIKI-L1 with 3B model
-python train_sft.py --config configs/viki-1-3b.yaml
+llamafactory-cli configs/viki-1-3b.yaml
 
 # Train VIKI-L2 with 3B model  
-python train_sft.py --config configs/viki-2-3b.yaml
+llamafactory-cli configs/viki-2-3b.yaml
 
 # Train VIKI-L3 with 3B model
-python train_sft.py --config configs/viki-3-3b.yaml
+llamafactory-cli configs/viki-3-3b.yaml
 ```
 
 #### Reinforcement Learning with GRPO
@@ -113,15 +113,8 @@ python train_sft.py --config configs/viki-3-3b.yaml
 ```bash
 # GRPO training for VIKI-L1 (3B model)
 cd train/3BGRPO/VIKI-L1
-bash run_grpo_training.sh
-
-# GRPO training for VIKI-L2 (3B model)
-cd train/3BGRPO/VIKI-L2
-bash run_grpo_training.sh
-
-# GRPO training for VIKI-L3 (3B model)
-cd train/3BGRPO/VIKI-L3
-bash run_grpo_training.sh
+bash VIKI-R-zero.sh
+bash VIKI-R.sh
 ```
 
 #### Training with 7B Models
@@ -129,7 +122,8 @@ bash run_grpo_training.sh
 ```bash
 # For 7B models, use the 7BGRPO directory
 cd train/7BGRPO/VIKI-L1
-bash run_grpo_training.sh
+bash VIKI-R-zero.sh
+bash VIKI-R.sh
 ```
 
 ### 🔧 Configuration
@@ -141,39 +135,14 @@ Modify the YAML configuration files in the `configs/` directory to customize:
 - Training strategies and optimization settings
 - Evaluation metrics and logging options
 
-Example configuration:
-```yaml
-### model
-model_name_or_path: model/Qwen2.5-VL-3B-Instruct
-image_max_pixels: 262144
-trust_remote_code: true
-
-### method
-stage: sft
-finetuning_type: full
-freeze_vision_tower: true
-
-### dataset
-dataset: viki_choose_500
-template: qwen2_vl
-cutoff_len: 4096
-max_samples: 1000
-
-### training
-per_device_train_batch_size: 1
-gradient_accumulation_steps: 2
-learning_rate: 1.0e-5
-num_train_epochs: 2
-```
-
 ### 🔭 Evaluation
 
 ```bash
 # Evaluate trained models
-python eval/evaluate_model.py --model_path saves/qwen2.5_vl-3b/full/viki_1_sft --dataset viki_test
+python eval/evaluate_model.py --model_path viki_1_sft --dataset viki_test
 
-# Run comprehensive benchmarks
-bash eval/run_all_evaluations.sh
+# Run model with feedback
+python RoboFactory-VIKI/eval/eval_with_fb/gpt4o.py
 ```
 
 ## 📈 Performance
