@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/dataset_v5_page-0001.jpg" width="500"/>
+  <img src="./assets/logo.png" width="500"/>
 </div>
 
 # RoboFactory-VIKI  
@@ -27,7 +27,7 @@
 ## ⭐️ Pipeline <a name="pipeline"></a>
 
 <div align="center">
-  <img src="./assets/viki-r_v7_page-0001.jpg" width="500"/>
+  <img src="./assets/viki-r_v7_page-0001.jpg" width="800"/>
 </div>
 
 ## 🗂️ Model Zoo <a name="model-zoo"></a>
