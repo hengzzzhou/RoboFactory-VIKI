@@ -87,8 +87,8 @@ bash VIKI-R.sh
 ```bibtex
 @inproceedings{robofactory-viki2025,
   title={{VIKI-R}: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning},
-  author={Anonymous Author(s)},
-  booktitle={NeurIPS 2025},
+  author={},
+  booktitle={},
   year={2025},
   url={https://github.com/your-org/RoboFactory-VIKI}
 }
