@@ -9,32 +9,36 @@
   ⭐️ <a href="#overview">Overview</a> &nbsp;&nbsp;│&nbsp;&nbsp; 🤖 <a href="#model-zoo">Model Zoo</a> &nbsp;&nbsp;│&nbsp;&nbsp; 📊 <a href="#datasets">Datasets</a> &nbsp;&nbsp;│&nbsp;&nbsp; 🚀 <a href="#quick-start">Quick Start</a> &nbsp;&nbsp;│&nbsp;&nbsp; 📑 <a href="#citation">Citation</a>
 </p>
 
-<h2 id="overview">🔥 Overview</h2> 
+## 🔥 Overview <a name="overview"></a>
+
 **RoboFactory-VIKI** comprises **VIKI-Bench** (a hierarchical multi-agent visual reasoning benchmark) and **VIKI-R** (a two-stage learning framework).  
 - **VIKI-Bench** introduces a three-level evaluation suite—**Agent Activation**, **Task Planning**, **Trajectory Perception**—with **23,737** tasks across **100** scenes, **6** robot morphologies, and over **1,000** asset combinations, offering both global and first-person views.  
 - **VIKI-R** builds on **Qwen2.5-VL-Instruct** (3B/7B) via:  
   1. **Supervised Fine-Tuning (SFT)** with Chain-of-Thought annotations  
   2. **Reinforcement Fine-Tuning (GRPO)** using Grouped Relative Policy Optimization and combined format + correctness rewards  
 
-## 🎯 Key Features  
+## 🎯 Key Features
+
 - **Hierarchical Dataset**: 23,737 tasks, 100 scenes, 6 robot types, ≥1,000 asset combos  
 - **GRPO RL**: Structured planning with dual-format and correctness rewards  
 - **Robotic-Focused**: home layouts, varied multi-robot tasks  
 - **Metrics**: Activation accuracy, planning correctness & efficiency, trajectory RMSE/HD/DFD  
 
-## <a id="Method">⭐️ Pipeline</a>
+## ⭐️ Pipeline <a name="pipeline"></a>
 
 <div align="center">
-<img src="./assets/viki-r_v7_page-0001.jpg" />
+  <img src="./assets/viki-r_v7_page-0001.jpg" width="500"/>
 </div>
 
-<h2 id="model-zoo">🗂️ Model Zoo</h2>
-| Model Size | Levels Supported | Training Stages   | Download           | Status    |
-|------------|------------------|-------------------|--------------------|-----------|
+## 🗂️ Model Zoo <a name="model-zoo"></a>
+
+| Model Size | Levels Supported | Training Stages   | Download           | Status      |
+|------------|------------------|-------------------|--------------------|-------------|
 | 3B         | L1 / L2 / L3     | SFT + GRPO        | [viki-3b](./models/) | Coming Soon |
 | 7B         | L1 / L2 / L3     | SFT + GRPO        | [viki-7b](./models/) | Coming Soon |
 
-<h2 id="datasets">📊 Datasets</h2>
+## 📊 Datasets <a name="datasets"></a>
+
 ### VIKI-Bench Levels  
 - **Level 1: Agent Activation**  
   Select the appropriate subset of agents given a scene and instruction  
@@ -50,7 +54,8 @@
 - **>1,000** asset combinations  
 - Global view + multi-view first-person perspectives  
 
-<h2 id="quick-start">🚀 Quick Start</h2> 
+## 🚀 Quick Start <a name="quick-start"></a>
+
 ```bash
 # Clone repository
 git clone https://github.com/your-org/RoboFactory-VIKI.git
@@ -75,9 +80,10 @@ llamafactory-cli configs/viki-1-3b.yaml
 cd train/3BGRPO/VIKI-L1
 bash VIKI-R-zero.sh
 bash VIKI-R.sh
-```
+````
 
-<h2 id="citation">📑 Citation</h2>
+## 📑 Citation <a name="citation"></a>
+
 ```bibtex
 @inproceedings{robofactory-viki2025,
   title={{VIKI-R}: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning},
@@ -91,3 +97,5 @@ bash VIKI-R.sh
 ---
 
 Made with ❤️ for the robotics and AI community
+
+```
