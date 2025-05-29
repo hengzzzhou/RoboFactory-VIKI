@@ -9,7 +9,7 @@
   ⭐️ <a href="#overview">Overview</a> &nbsp;&nbsp;│&nbsp;&nbsp; 🤖 <a href="#model-zoo">Model Zoo</a> &nbsp;&nbsp;│&nbsp;&nbsp; 📊 <a href="#datasets">Datasets</a> &nbsp;&nbsp;│&nbsp;&nbsp; 🚀 <a href="#quick-start">Quick Start</a> &nbsp;&nbsp;│&nbsp;&nbsp; 📑 <a href="#citation">Citation</a>
 </p>
 
-## 🔥 Overview  
+<h2 id="overview">🔥 Overview</h2> 
 **RoboFactory-VIKI** comprises **VIKI-Bench** (a hierarchical multi-agent visual reasoning benchmark) and **VIKI-R** (a two-stage learning framework).  
 - **VIKI-Bench** introduces a three-level evaluation suite—**Agent Activation**, **Task Planning**, **Trajectory Perception**—with **23,737** tasks across **100** scenes, **6** robot morphologies, and over **1,000** asset combinations, offering both global and first-person views.  
 - **VIKI-R** builds on **Qwen2.5-VL-Instruct** (3B/7B) via:  
@@ -28,13 +28,13 @@
 <img src="./assets/viki-r_v7_page-0001.jpg" />
 </div>
 
-## 🗂️ Model Zoo  
+<h2 id="model-zoo">🗂️ Model Zoo</h2>
 | Model Size | Levels Supported | Training Stages   | Download           | Status    |
 |------------|------------------|-------------------|--------------------|-----------|
 | 3B         | L1 / L2 / L3     | SFT + GRPO        | [viki-3b](./models/) | Coming Soon |
 | 7B         | L1 / L2 / L3     | SFT + GRPO        | [viki-7b](./models/) | Coming Soon |
 
-## 📊 Datasets  
+<h2 id="datasets">📊 Datasets</h2>
 ### VIKI-Bench Levels  
 - **Level 1: Agent Activation**  
   Select the appropriate subset of agents given a scene and instruction  
@@ -50,7 +50,7 @@
 - **>1,000** asset combinations  
 - Global view + multi-view first-person perspectives  
 
-## 🚀 Quick Start  
+<h2 id="quick-start">🚀 Quick Start</h2> 
 ```bash
 # Clone repository
 git clone https://github.com/your-org/RoboFactory-VIKI.git
@@ -77,7 +77,7 @@ bash VIKI-R-zero.sh
 bash VIKI-R.sh
 ```
 
-## 📑 Citation
+<h2 id="citation">📑 Citation</h2>
 ```bibtex
 @inproceedings{robofactory-viki2025,
   title={{VIKI-R}: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning},
