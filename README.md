@@ -97,5 +97,3 @@ bash VIKI-R.sh
 ---
 
 Made with ❤️ for the robotics and AI community
-
-```
